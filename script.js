@@ -24,16 +24,17 @@ function startGame() {
   // Initialize the game state
   country = randomCountry();
   answer = country.name.common.toUpperCase();
+
   guess = [];
   guessesLeft = 10;
   console.log("the answer is:");
   console.log(answer);
   for (let i = 0; i < answer.length; i++) {
     // TODO: how to handle letters not on our keyboard?
-    if (answer[i] === " ") {
-      guess.push(" ");
-    } else {
+    if (answer[i] >= "A" && answer[i] <= "Z") {
       guess.push("_");
+    } else {
+      guess.push(answer[i]);
     }
   }
 
